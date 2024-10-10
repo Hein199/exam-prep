@@ -58,8 +58,8 @@ export default function AddSupplier() {
             >
                 <p style={{ color: "#6c757d" }}>
                     &copy; A Web Application Development Project from:{" "}
-                    <Link href="https://github.com/LynnT-2003" style={{ color: "#6c757d" }}>
-                        Lynn Thit Nyi Nyi
+                    <Link href="https://github.com/Hein199" style={{ color: "#6c757d" }}>
+                        Hein Naing Soe
                     </Link>
                 </p>
             </footer>

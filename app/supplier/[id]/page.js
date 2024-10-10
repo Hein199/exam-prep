@@ -6,12 +6,11 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function UpdateSupplier({ params }) {
-    const { id } = params; // Extracting the ID from params
+    const { id } = params;
     const [supplier, setSupplier] = useState(null);
     const [error, setError] = useState(null);
     const { register, handleSubmit, reset } = useForm();
 
-    // Fetch supplier data when component mounts
     useEffect(() => {
         const fetchSupplier = async () => {
             try {
@@ -19,7 +18,7 @@ export default function UpdateSupplier({ params }) {
                 if (!res.ok) throw new Error('Failed to fetch supplier data');
                 const data = await res.json();
                 setSupplier(data);
-                reset(data); // Reset form with fetched data
+                reset(data);
             } catch (err) {
                 setError(err.message || "Something went wrong.");
                 console.error("Error fetching supplier:", err);
@@ -44,7 +43,6 @@ export default function UpdateSupplier({ params }) {
                 throw new Error(errorData.error || "Failed to update supplier");
             }
 
-            // alert("Supplier updated successfully");
             window.location.href = "/";
         } catch (err) {
             setError(err.message || "Something went wrong.");
@@ -65,14 +63,13 @@ export default function UpdateSupplier({ params }) {
         }}>
             <p style={{ color: "#6c757d" }}>
                 &copy; A Web Application Development Project from:{" "}
-                <Link href="https://github.com/LynnT-2003" style={{ color: "#6c757d" }}>
-                    Lynn Thit Nyi Nyi
+                <Link href="https://github.com/Hein199" style={{ color: "#6c757d" }}>
+                    Hein Naing Soe
                 </Link>
             </p>
         </footer>
     );
 
-    // Handle supplier not found case
     if (!supplier && !error) {
         return (
             <Container>
